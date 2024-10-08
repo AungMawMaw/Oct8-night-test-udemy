@@ -1,6 +1,10 @@
 <div>
-  <button>
-    <img src="" alt="" />
-    <span> name </span>
+  <button (click)="onClickUser()">
+    <!-- <button> -->
+    <!-- <img [src]="assets/users/{{ selected_user.avator }}" alt="" /> -->
+    <!-- <img [src]=`assets/users/${selected_user.avator}` alt="" /> -->
+    <!-- <img [src]="assets/users/{{ selected_user.avator }}" alt="" /> -->
+    <img [src]="img_src" [alt]="'this is picture of' + img_src" />
+    <span> {{ name }} </span>
   </button>
 </div>

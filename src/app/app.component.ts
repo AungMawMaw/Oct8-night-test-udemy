@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { Data_Users } from '../data-users';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,10 @@ import { UserComponent } from './user/user.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  users = Data_Users;
   title = 'test-Oct8-1';
+
+  onSelectUser(id: string) {
+    console.log('Select user with id ' + id);
+  }
 }
