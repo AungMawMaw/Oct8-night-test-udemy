@@ -1,10 +1,6 @@
-<div>
-  <button (click)="onClickUser()">
-    <!-- <button> -->
-    <!-- <img [src]="assets/users/{{ selected_user.avator }}" alt="" /> -->
-    <!-- <img [src]=`assets/users/${selected_user.avator}` alt="" /> -->
-    <!-- <img [src]="assets/users/{{ selected_user.avator }}" alt="" /> -->
+<app-card>
+  <button [class.active]="selected" (click)="onClickUser()">
     <img [src]="img_src" [alt]="'this is picture of' + img_src" />
-    <span> {{ name }} </span>
+    <span> {{ user.name }} </span>
   </button>
-</div>
+</app-card>

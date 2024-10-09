@@ -1,27 +1,31 @@
-import { Component, EventEmitter, Input, output, Output } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { Data_Users } from '../../data-users';
+import { type User } from './user.model';
+import { CardComponent } from '../shared/card/card.component';
 
 const random_user = Math.floor(Math.random() * Data_Users.length);
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) name!: string;
+  // @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
 
   // @Output() select = new EventEmitter();
   select = output<string>();
 
   get img_src() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
   onClickUser() {
-    this.select.emit(this.id); //send data to parents
+    this.select.emit(this.user.id); //send data to parents
   }
   // random=0
   // randomUser(){
